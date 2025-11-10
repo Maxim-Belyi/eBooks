@@ -1,0 +1,37 @@
+services:
+  php-apache:
+    build: .
+    container_name: ebook_php_web
+    ports:
+      - "8080:80"
+
+    volumes:
+      - ./:/var/www/html/
+
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:8.0
+    container_name: ebook_php_db
+    restart: always
+    ports:
+      - "33066:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 1111
+      MYSQL_DATABASE: book_php
+      MYSQL_USER: user
+      MYSQL_PASSWORD: 1111
+
+    volumes:
+    - db_data:/var/lib/mysql
+
+  adminer:
+    image: adminer
+    container_name: ebook_adminer
+    restart: always
+    ports:
+      - "8888:8080"
+
+volumes:
+  db_data:
