@@ -1,4 +1,4 @@
-<div>
+<section>
     <h1>ёBook - твоё шикарное хранилище книг!</h1>
     <ul>
         <li>
@@ -11,4 +11,4 @@
             <a href="/templates/logout.php">Выйти из профиля</a>
         </li>
     </ul>
-</div>
+</section>

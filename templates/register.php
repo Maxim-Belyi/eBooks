@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = trim(htmlspecialchars($_POST['password']));
 
     if (empty($username) || empty($password)) {
-        $error = "Заполни все поля по-братски";
+        $error = "Заполни все поля";
     } elseif (strlen($password) < 6) {
         $error = "Пароль не менее 6 символов.";
     } elseif (!preg_match('/^[a-zA-Zа-яА-ЯёЁ]+$/u', $username)) {
@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt_insert->bind_param("ss", $username, $hashed_password);
 
             if ($stmt_insert->execute()) {
-                $message = "Регистрация прошла успешно! Теперь вы можете <a href='login.php'>войти</a>.";
+                $message = "Регистрация прошла успешно! Теперь вы можете <a href='login.php'>войти</a>";
             } else {
                 $error = "Ошибка, попробуйте позже";
             }
