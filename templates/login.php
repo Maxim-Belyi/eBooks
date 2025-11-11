@@ -6,13 +6,13 @@ $error = '';
 $message = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST["username"];
-    $password = $_POST["password"];
+    $username = trim(htmlspecialchars($_POST['username']));
+    $password = trim(htmlspecialchars($_POST['password']));
 
     if (empty($username) || empty($password)) {
         $error = "Заполни все поля по-братски";
-    } elseif (!preg_match("/^[a-zA-Z]+$/", $username)) {
-        $error = "Имя пользователя может содержать только латинские буквы";
+    } elseif (!preg_match('/^[a-zA-Zа-яА-ЯёЁ]+$/u', $username)) {
+        $error = "Имя пользователя может содержать только буквы";
     } else {
         $stmt = $conn->prepare("SELECT id, username, password FROM users WHERE username = ?");
         $stmt->bind_param("s", $username);
@@ -44,11 +44,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <form action="login.php" method="POST">
         <div>
             <label for="username">Имя пользователя</label>
-            <input type="text" name="username" id="username" placeholder="Только латинские буквы"
+            <input type="text" name="username" id="username" placeholder="Только буквы"
                    required="required"
                    minlength="4" maxlength="20"
-                   pattern="[a-zA-Z]+"
-                   title="Только латинские буквы, мининум 4 символа"
+                   pattern="[A-Za-zА-Яа-яЁё]+"
+                   title="Только буквы, минимум 4 символа"
             />
         </div>
 
@@ -61,7 +61,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             />
         </div>
 
+        <?php if ($message): ?>
+            <p><?= $message ?></p>
+        <?php endif; ?>
+        <?php if ($error): ?>
+            <p><?= $error ?></p>
+        <?php endif; ?>
+
         <button type="submit">Войти</button>
     </form>
-
 </div>

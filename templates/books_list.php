@@ -29,7 +29,7 @@ $result = $conn->query("SELECT * FROM books");
             }
             echo '</ul>';
         } else {
-            echo '<span class="error-message"> В каталоге нет книг, говнокодер накосячил </span>';
+            echo '<span> В каталоге нет книг, говнокодер накосячил </span>';
         }
         ?>
 
