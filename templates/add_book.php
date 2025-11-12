@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bind_param("ssd", $title, $author, $price);
 
         if ($stmt->execute()) {
-            $message = "Книга успешно добавлена!<a href='/index.php'>Вернуться на главную?</a>";
+            $message = "Книга успешно добавлена!";
             setcookie("last_added_book", $title, time() + 120, '/');
         } else {
             $error = 'Что-то пошло не так';
