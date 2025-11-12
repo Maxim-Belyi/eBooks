@@ -40,7 +40,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-<div>
+<?php
+require_once __DIR__ . "/head.php";
+?>
+
+<section>
     <form action="login.php" method="POST">
         <div>
             <label for="username">Имя пользователя</label>
@@ -70,4 +74,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <button type="submit">Войти</button>
     </form>
-</div>
+</section>

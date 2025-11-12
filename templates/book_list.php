@@ -10,19 +10,8 @@ if (isset($_COOKIE["last_added_book"])) {
 $result = $conn->query("SELECT title, author, price FROM books ORDER BY id DESC");
 ?>
 
-<section>
+<section class="book_list">
     <div>
-        <?php if (isset($_SESSION['user_id'])) : ?>
-            <p> Добро пожаловать, <?= htmlspecialchars($_SESSION['username']) ?> </p>
-            <a href="templates/add_book.php">Добавить книгу</a>
-
-        <?php else: ?>
-            <p>Вы вошли как гость</p>
-            <p>Чтобы добавить книгу необходимо <a href="/templates/register.php">зарегистрироваться</a> либо <a
-                        href="/templates/login.php">войти</a></p>
-
-        <?php endif; ?>
-
         <?php if ($lastAddedBook) : ?>
         <div>
             <p> Последняя добавленная книга: <?= htmlspecialchars($lastAddedBook) ?></p>
@@ -38,8 +27,8 @@ $result = $conn->query("SELECT title, author, price FROM books ORDER BY id DESC"
 
                     <li>
                         <h4 class="book-title"> <?= htmlspecialchars($row['title']) ?></h4>
-                        <p class="book-author"> <?= htmlspecialchars($row['author']) ?> </p>
-                        <p class="book-price"> <?= htmlspecialchars($row['price']) ?> р.</p>
+                        <p class="book-author"> Автор: <?= htmlspecialchars($row['author']) ?> </p>
+                        <p class="book-price"> Цена: <?= htmlspecialchars($row['price']) ?> р.</p>
 
                     </li>
                 <?php endwhile; ?>

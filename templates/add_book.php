@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $price = trim(htmlspecialchars($_POST['price']));
 
     if (empty($title) || empty($author) || empty($price)) {
-        $error = 'Заполни все поля по-братски';
+        $error = 'Заполни все поля';
     } elseif (!is_numeric($price) || $price <= 0) {
         $error = 'Цена должна быть больше 0';
     } else {
@@ -32,10 +32,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->close();
     }
 }
-
 ?>
 
-<section>
+<?php
+require_once __DIR__ . "/head.php";
+?>
+
+<section class="add_book">
     <h2>Время добавить свою книгу!</h2>
     <a href="/index.php">Вернуться на главную</a>
 
@@ -45,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <input type="text" id="title" name="title" placeholder="Минимум 1 символ"
                    required
                    minlength="1"
-                   maxlength="80"
+                   maxlength="100"
                    pattern="[a-zA-Zа-яА-Я0-9\s.,!?-]+"
                    title="Минимум 1 символ">
         </div>
@@ -55,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <input type="text" id="author" name="author"
                    required
                    minlength="3"
-                   maxlength="20"
+                   maxlength="40"
                    pattern="[A-Za-zА-Яа-яЁё\s]+"
                    title="Только буквы, минимум 4 символа">
         </div>
@@ -68,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                    step="0.01"
                    title="Только положительные числа больше нуля">
         </div>
-         <button type="submit">Добавить книгу</button>
+        <button type="submit">Добавить книгу</button>
     </form>
 
     <?php if ($message): ?>
