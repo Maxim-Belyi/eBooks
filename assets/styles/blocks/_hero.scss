@@ -1,0 +1,36 @@
+@use "../helpers/" as *;
+
+.hero {
+  background: url(/assets/images/hero__background.png) center/cover no-repeat;
+  padding: fluid(60, 10) fluid(60, 10);
+
+  &__description {
+    font-size: fluid(64, 22);
+  }
+
+  &__welcome {
+  padding-top: rem(80);
+    font-size: fluid(44, 24);
+  }
+
+  &__user {
+    color: var(--color-red);
+    font-weight: 600;
+  }
+
+  &__link-wrapper {
+    padding-top: rem(120);
+  }
+
+  &__link {
+    padding: fluid(60, 10);
+    font-size: fluid(24, 14);
+    font-weight: 500;
+
+    &:hover {
+        color: var(--color-red);
+        text-decoration: underline;
+    }
+  }
+
+}

@@ -1,0 +1,9 @@
+@use "../helpers/" as *;
+ 
+.input {
+    width: 100%;
+    min-width: rem(300);
+    background-color: var(--color-cream-accent);
+    border: 1px solid;
+    height: rem(36);
+}

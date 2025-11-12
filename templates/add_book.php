@@ -38,47 +38,40 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 require_once __DIR__ . "/head.php";
 ?>
 
-<section class="add_book">
-    <h2>Время добавить свою книгу!</h2>
-    <a href="/index.php">Вернуться на главную</a>
+<section class="register">
+    <div class="register__wrapper">
+        <h1>Добавь свою книгу!</h1>
 
-    <form action="add_book.php" method="POST">
-        <div>
-            <label for="title">Название книги</label>
-            <input type="text" id="title" name="title" placeholder="Минимум 1 символ"
-                   required
-                   minlength="1"
-                   maxlength="100"
-                   pattern="[a-zA-Zа-яА-Я0-9\s.,!?-]+"
-                   title="Минимум 1 символ">
-        </div>
+        <form action="add_book.php" method="POST">
+            <fieldset class="register__fieldset">
+                <legend for="title">Название книги</legend>
+                <input class="register__input input" type="text" id="title" name="title" placeholder="Минимум 1 символ"
+                    required minlength="1" maxlength="100" pattern="[a-zA-Zа-яА-Я0-9\s.,!?-]+" title="Минимум 1 символ">
+            </fieldset>
 
-        <div>
-            <label for="title">Автор</label>
-            <input type="text" id="author" name="author"
-                   required
-                   minlength="3"
-                   maxlength="40"
-                   pattern="[A-Za-zА-Яа-яЁё\s]+"
-                   title="Только буквы, минимум 4 символа">
-        </div>
+            <fieldset class="register__fieldset">
+                <legend for="title">Автор</legend>
+                <input class="register__input input" type="text" id="author" name="author" required minlength="3"
+                    maxlength="40" pattern="[A-Za-zА-Яа-яЁё\s]+" title="Только буквы, минимум 4 символа">
+            </fieldset>
 
-        <div>
-            <label for="title">Цена</label>
-            <input type="number" id="price" name="price" placeholder="Например 150.20"
-                   required
-                   min="0.01"
-                   step="0.01"
-                   title="Только положительные числа больше нуля">
-        </div>
-        <button type="submit">Добавить книгу</button>
-    </form>
+            <fieldset class="register__fieldset">
+                <legend for="title">Цена</legend>
+                <input class="register__input input" type="number" id="price" name="price" placeholder="Например 150.20"
+                    required min="0.01" step="0.01" title="Только положительные числа больше нуля">
+            </fieldset>
+            <div class="register__inner">
+                <button class="register__button button" type="submit">Добавить книгу</button>
+                <a class="register__link" href="/index.php">Вернуться на главную</a>
+            </div>
+        </form>
 
-    <?php if ($message): ?>
-        <p><?= $message ?></p>
-    <?php endif; ?>
+        <?php if ($message): ?>
+            <p><?= $message ?></p>
+        <?php endif; ?>
 
-    <?php if ($error): ?>
-        <p><?= $error ?></p>
-    <?php endif; ?>
+        <?php if ($error): ?>
+            <p><?= $error ?></p>
+        <?php endif; ?>
+    </div>
 </section>

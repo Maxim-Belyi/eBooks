@@ -44,34 +44,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 require_once __DIR__ . "/head.php";
 ?>
 
-<section>
-    <form action="login.php" method="POST">
-        <div>
-            <label for="username">Имя пользователя</label>
-            <input type="text" name="username" id="username" placeholder="Только буквы"
-                   required="required"
-                   minlength="4" maxlength="20"
-                   pattern="[A-Za-zА-Яа-яЁё]+"
-                   title="Только буквы, минимум 4 символа"
-            />
-        </div>
+<section class="register">
+    <div class="register__wrapper">
 
-        <div>
-            <label for="password">Пароль </label>
-            <input type="password" name="password" id="password" placeholder="от 6 символов"
-                   required="required"
-                   minlength="6" maxlength="20"
-                   title="Минимум 6 символов"
-            />
-        </div>
+        <h1>Вход</h1>
+        <form action="login.php" method="POST">
+            <fieldset class="register__fieldset">
+                <legend for="username">Имя пользователя</legend>
+                <input class="register__input input" type="text" name="username" id="username" placeholder="Только буквы" required="required"
+                    minlength="4" maxlength="20" pattern="[A-Za-zА-Яа-яЁё]+" title="Только буквы, минимум 4 символа" />
+            </fieldset>
 
-        <?php if ($message): ?>
-            <p><?= $message ?></p>
-        <?php endif; ?>
-        <?php if ($error): ?>
-            <p><?= $error ?></p>
-        <?php endif; ?>
+            <fieldset class="register__fieldset">
+                <legend for="password">Пароль </legend>
+                <input class="register__input input" type="password" name="password" id="password" placeholder="от 6 символов" required="required"
+                    minlength="6" maxlength="20" title="Минимум 6 символов" />
+            </fieldset>
 
-        <button type="submit">Войти</button>
-    </form>
+            <?php if ($message): ?>
+                <p><?= $message ?></p>
+            <?php endif; ?>
+            <?php if ($error): ?>
+                <p><?= $error ?></p>
+            <?php endif; ?>
+
+            <div class="register__inner">
+                <button class="register__button button" type="submit">Войти</button>
+                <a class="register__link" href="/index.php">На главную</a>
+            </div>
+        </form>
+    </div>
 </section>

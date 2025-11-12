@@ -1,0 +1,72 @@
+@use "./helpers" as *;
+
+body {
+  margin-inline: auto;
+  max-width: var(--container-width);
+  background-color: var(--color-cream);
+}
+
+a,
+button,
+input,
+textarea,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+address {
+  list-style: normal;
+}
+
+li {
+  &:hover {
+    color: var(--color-accent);
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-family: var(--ff-main);
+  font-weight: 800;
+  font-size: fluid(122, 28);
+  color: var(--color-dark-red);
+}
+
+h2 {
+  font-family: var(--ff-main);
+  font-weight: 600;
+  font-size: fluid(56, 20);
+  letter-spacing: 0.05em;
+}
+
+h3 {
+  font-family: var(--ff-main);
+  font-size: fluid(36, 18);
+  font-weight: 500;
+}
+
+h4 {
+  font-family: var(--ff-main);
+  font-size: fluid(18, 16);
+  font-weight: 700;
+}
+
+legend {
+  font-family: var(--ff-main);
+  font-size: fluid(20, 16);
+}
+
+p {
+  font-family: var(--ff-accent);
+  font-size: fluid(18, 14);
+  letter-spacing: 0.01em;
+}
+
+a {
+  font-size: fluid(16, 14);
+}
