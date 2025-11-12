@@ -14,7 +14,7 @@ $result = $conn->query("SELECT title, author, price FROM books ORDER BY id DESC"
     <div class="book-list__wrapper">
         <?php if ($lastAddedBook): ?>
             <div>
-                <p> Последняя добавленная книга: <?= htmlspecialchars($lastAddedBook) ?></p>
+                <p class="register__link"> Последняя добавленная книга: </p> <?= htmlspecialchars($lastAddedBook) ?>
             </div>
         <?php endif; ?>
 
