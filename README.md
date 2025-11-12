@@ -1,6 +1,6 @@
 # Веб-приложение "Книжный каталог ёBook"
 
-Простое веб-приложение на PHP и MySQL для учета книг, работающее в среде Docker.
+Простое веб-приложение на PHP и MySQL для учета книг, работающее в среде Docker. Адаптивно под мобильные устройства
 
 ### Технологии
 
@@ -10,11 +10,11 @@
 ![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 ![Apache](https://img.shields.io/badge/Apache-D22128?style=for-the-badge&logo=apache&logoColor=white)
 
-**Фронтенд (в разработке):**
+**Фронтенд:**
 
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![Sass](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+
 
 **Инфраструктура и Деплой:**
 
