@@ -67,7 +67,7 @@ require_once __DIR__ . "/head.php";
         </form>
 
         <?php if ($message): ?>
-            <p><?= $message ?></p>
+            <p class="register__message"><?= $message ?></p>
         <?php endif; ?>
 
         <?php if ($error): ?>
