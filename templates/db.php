@@ -16,5 +16,3 @@ $conn = new mysqli($db_host, $db_user, $db_pass, $db_name, $db_port);
 $conn->connect_error ? die("Ошибка подключения к бд: " . $conn->connect_error) : " ";
 
 $conn->set_charset("utf8");
-
-

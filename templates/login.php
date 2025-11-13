@@ -1,5 +1,4 @@
 <?php
-global $conn;
 require_once __DIR__ . "/db.php";
 
 $error = '';
@@ -22,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($result->num_rows === 1) {
             $user = $result->fetch_assoc();
 
-            /** @var TYPE_NAME $user */
+            /** @var array<string, mixed> $user */
             if (password_verify($password, $user["password"])) {
                 $_SESSION['user_id'] = $user["id"];
                 $_SESSION['username'] = $user["username"];
@@ -40,9 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-<?php
-require_once __DIR__ . "/head.php";
-?>
+<?php require_once __DIR__ . "/head.php"; ?>
 
 <section class="register">
     <div class="register__wrapper">

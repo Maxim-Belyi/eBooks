@@ -2,7 +2,6 @@
 require_once __DIR__ . "/db.php";
 global $conn;
 
-
 $error = '';
 $message = '';
 

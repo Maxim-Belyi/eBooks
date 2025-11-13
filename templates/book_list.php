@@ -39,5 +39,4 @@ $result = $conn->query("SELECT title, author, price FROM books ORDER BY id DESC"
             <span>В каталоге нет книг. Вы можете <a href="/add_book.php">добавить первую</a>!</span>;
         <?php endif; ?>
     </div>
-
 </section>
