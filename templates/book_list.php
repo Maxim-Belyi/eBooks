@@ -1,7 +1,4 @@
 <?php
-global $conn;
-require_once __DIR__ . "/db.php";
-
 $lastAddedBook = null;
 if (isset($_COOKIE["last_added_book"])) {
     $lastAddedBook = $_COOKIE["last_added_book"];

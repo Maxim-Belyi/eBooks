@@ -37,7 +37,7 @@
 1.  **Клонируйте репозиторий:**
     ```bash
     git clone https://github.com/Maxim-Belyi/eBooks.git
-    cd eBook_php
+    cd eBooks
     ```
 
 2.  **Запустите контейнеры:**
