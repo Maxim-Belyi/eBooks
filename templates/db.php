@@ -1,17 +1,28 @@
 <?php
 session_start();
 
-$db_host = getenv('MYSQLHOST');
-$db_user = getenv('MYSQLUSER');      
-$db_pass = getenv('MYSQLPASSWORD');
-$db_name = getenv('MYSQLDATABASE');   
-$db_port = getenv('MYSQLPORT');
+$db_host = getenv('DB_HOST');
+$db_user = getenv('DB_USERNAME');
+$db_pass = getenv('DB_PASSWORD');
+$db_name = getenv('DB_DATABASE');
 
-if (!$db_host || !$db_user || !$db_pass || !$db_name || !$db_port) {
-    die("Что то с переменными, смотри RailWay");
+if (!$db_host) {
+    die("Ошибка с именем хоста");
 }
 
-$conn = new mysqli($db_host, $db_user, $db_pass, $db_name, $db_port);
+if (!$db_user) {
+    die("Ошибка с именем пользователя");
+}
+if (!$db_pass) {
+    die("Ошибка пароля!");
+}
+if (!$db_name) {
+    die("Ошибка в названии базы данных");
+}
+
+
+
+$conn = new mysqli($db_host, $db_user, $db_pass, $db_name);
 
 $conn->connect_error ? die("Ошибка подключения к бд: " . $conn->connect_error) : " ";
 
