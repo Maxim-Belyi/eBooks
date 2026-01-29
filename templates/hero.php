@@ -13,7 +13,8 @@
             </div>
 
         <?php else: ?>
-            <p class="hero__welcome">Вы вошли как гость <br> чтобы добавить книгу необходимо <br> <a class="hero__link" href="/templates/register.php">зарегистрироваться</a>  <a class="hero__link"
+            <p class="hero__welcome">Вы вошли как гость <br> чтобы добавить книгу необходимо <br> <a class="hero__link"
+                    href="/templates/register.php">зарегистрироваться</a> <a class="hero__link"
                     href="/templates/login.php">войти</a></p>
 
         <?php endif; ?>

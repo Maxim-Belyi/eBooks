@@ -20,8 +20,6 @@ if (!$db_name) {
     die("Ошибка в названии базы данных");
 }
 
-
-
 $conn = new mysqli($db_host, $db_user, $db_pass, $db_name);
 
 $conn->connect_error ? die("Ошибка подключения к бд: " . $conn->connect_error) : " ";
